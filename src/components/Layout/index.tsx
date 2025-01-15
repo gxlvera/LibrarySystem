@@ -5,11 +5,11 @@ import {
 } from "@ant-design/icons";
 import { DownOutlined } from "@ant-design/icons";
 import { MenuProps, Space } from "antd";
-import { Layout as AntdLayout, Breadcrumb, Dropdown, Menu } from "antd";
+import { Layout as AntdLayout, Breadcrumb, Dropdown, Menu,theme } from "antd";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { ReactNode } from "react";
 
 import styles from "./index.module.css";
 
@@ -45,61 +45,66 @@ const items2: MenuProps["items"] = [
 const ITEMS = [
   {
     // icon: React.createElement(icon),
-    label: "图书管理",
+    label: "Book Management",
     key: "book",
 
     children: [
-      { label: "图书列表", key: "/book" },
-      { label: "图书添加", key: "/book/add" },
+      { label: "Book List", key: "/book" },
+      { label: "Add Book", key: "/book/add" },
     ],
   },
   {
     // icon: React.createElement(icon),
-    label: "借阅管理",
+    label: "Borrow Management",
     key: "borrow",
 
     children: [
-      { label: "借阅列表", key: "/borrow" },
-      { label: "借阅添加", key: "/borrow/add" },
+      { label: "Borrow List", key: "/borrow" },
+      { label: "Borrow Book", key: "/borrow/add" },
     ],
   },
   {
     // icon: React.createElement(icon),
-    label: "分类管理",
+    label: "Category Management",
     key: "category",
 
     children: [
-      { label: "分类列表", key: "/category" },
-      { label: "分类添加", key: "/category/add" },
+      { label: "Category List", key: "/category" },
+      { label: "Add Category", key: "/category/add" },
     ],
   },
   {
     // icon: React.createElement(icon),
-    label: "用户管理",
+    label: "User Management",
     key: "user",
 
     children: [
-      { label: "用户列表", key: "/user" },
-      { label: "用户添加", key: "/user/add" },
+      { label: "User List", key: "/user" },
+      { label: "Add User", key: "/user/add" },
     ],
   },
 ];
 
 const USER_ITEMS: MenuProps["items"] = [
   {
-    label: "用户中心",
+    label: "User Center",
     key: "1",
   },
   {
-    label: "登出",
+    label: "Log Out",
     key: "2",
   },
 ];
 
-export function Layout({ children }) {
+export function Layout({ children }:{children:ReactNode}) {
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
+
   const router = useRouter();
-  const handleMenuClick = ({ key }) => {
+  const handleMenuClick: MenuProps['onClick'] = ({ key }) => {
     router.push(key);
+    console.log(key)
   };
   return (
     <>
@@ -119,12 +124,12 @@ export function Layout({ children }) {
               alt="logo"
               className={styles.logo}
             />
-            三木图书管理系统
+            Library System
             <span className={styles.user}>
               <Dropdown menu={{ items: USER_ITEMS }}>
                 <a onClick={(e) => e.preventDefault()}>
                   <Space>
-                    用户名
+                    User Name
                     <DownOutlined />
                   </Space>
                 </a>
@@ -132,7 +137,7 @@ export function Layout({ children }) {
             </span>
           </Header>
           <AntdLayout className={styles.sectionInner}>
-            <Sider width={200}>
+            <Sider width={250} >
               <Menu
                 mode="inline"
                 defaultSelectedKeys={["/book"]}

@@ -1,13 +1,13 @@
 .header {
-  background-color: #fff;
+  background-color: #fefefe;
   font-size: 20px;
-  color: #487bd7;
+  color: #da92f6;
   font-weight: bold;
   margin-right: 8px;
 }
 
 .logo {
-  margin-right: 8px;
+  margin-right: 5px;
   margin-top: -4px;
 }
 
@@ -22,10 +22,12 @@
 }
 
 .sectionContent {
-  padding: 32px;
+  padding: 20px;
 }
 .content {
-  background-color: #fff;
+  background-color: #f2ecf3;
   border-radius: 16px;
   padding: 24px;
 }
+
+
