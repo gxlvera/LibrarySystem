@@ -6,5 +6,13 @@ import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return <><div>book</div></>;
+  return (
+    <>
+
+        <div>book</div>
+        
+
+    </>
+
+  );
 }

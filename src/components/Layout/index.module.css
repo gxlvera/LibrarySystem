@@ -19,9 +19,10 @@
   color:rgb(0,0,0,0.88);
 }
 
-.user a:hover{
-  color:var(--header-menu-title-color)
+.user :global(a.ant-dropdown-trigger:hover) {
+   color:var(--header-menu-title-color);
 }
+
 
 .sectionInner {
   height: calc(100vh - 64px);
@@ -33,6 +34,7 @@
 .content {
   border-radius: 16px;
   padding: 24px;
+  background-color: #ffffff;
 }
 
 .menu :global(.ant-menu-submenu-selected >.ant-menu-submenu-title){
