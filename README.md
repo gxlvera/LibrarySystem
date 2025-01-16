@@ -1,6 +1,5 @@
-<img src="public/book.png" width="100%">
-
-#### Welcome to the **Library System**
+<img src="public/book.png" style="width:30px;height:auto;display:inline">
+<h1 style="display:inline;margin-left:10px">Welcome to the Library System</h1>
 
 ### Tech Stack
 - **Frontend:** React, Next.js, TypeScript, Ant Design
@@ -9,7 +8,7 @@
 ### Get Started
 - clone this repo
 ```shell
-git clone 
+git clone https://github.com/gxlvera/LibrarySystem.git
 ```
 
 - install dependencies
