@@ -1,7 +1,8 @@
+
 .header {
-  background-color: #fefefe;
+  background-color: #ffffff;
   font-size: 20px;
-  color: #da92f6;
+  color: var(--header-menu-title-color);
   font-weight: bold;
   margin-right: 8px;
 }
@@ -13,8 +14,13 @@
 
 .user {
   float: right;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
+  color:rgb(0,0,0,0.88);
+}
+
+.user a:hover{
+  color:var(--header-menu-title-color)
 }
 
 .sectionInner {
@@ -25,9 +31,19 @@
   padding: 20px;
 }
 .content {
-  background-color: #f2ecf3;
   border-radius: 16px;
   padding: 24px;
+}
+
+.menu :global(.ant-menu-submenu-selected >.ant-menu-submenu-title){
+  color:var(--header-menu-title-color);
+}
+
+.menu :global(.ant-menu-item-selected){
+  color:var(--header-menu-title-color);
+  background-color: rgb(255, 255, 255);
+  border:var(--border-purple) 2px solid;
+  font-weight:bold
 }
 
 

@@ -118,7 +118,7 @@ export function Layout({ children }:{children:ReactNode}) {
         <AntdLayout>
           <Header className={styles.header}>
             <Image
-              src="/logo.svg"
+              src="/book.png"
               width={30}
               height={30}
               alt="logo"
@@ -145,6 +145,7 @@ export function Layout({ children }:{children:ReactNode}) {
                 style={{ height: "100%", borderRight: 0 }}
                 items={ITEMS}
                 onClick={handleMenuClick}
+                className={styles.menu}
               />
             </Sider>
             <AntdLayout className={styles.sectionContent}>
