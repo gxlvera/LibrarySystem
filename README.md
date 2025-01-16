@@ -1,4 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="public/book.png" width="100%">
+
+#### Welcome to the **Library System**
+
+### Tech Stack
+- **Frontend:** React, Next.js, TypeScript, Ant Design
+- **Backend:** Next.js API, MongoDB
+
+### Get Started
+- clone this repo
+```shell
+git clone 
+```
+
+- install dependencies
+```shell
+npm install
+```
+Go to localhost:3000 to see the landing page of the library system
+
+### Features
+- **User Management:** Add, edit, delete users
+- **Book Management:** Add, edit, delete books
+- **Borrow and Return Books:** Manage book borrowing and returning
+- **Book Categorization:** Each book is tagged with its corresponding categorization, makeing it convenient to organize your books🚀
+
+
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -35,4 +62,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
