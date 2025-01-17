@@ -1,17 +1,52 @@
-import styles from "@/styles/Home.module.css";
-import { Inter } from "next/font/google";
-import Head from "next/head";
-import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+import {Layout as AntdLayout, Button, Form, Input, Select, Space} from 'antd'
+
+const {Content} = AntdLayout
 
 export default function Home() {
+  const handleSearchFinish =()=>{
+
+
+  }
   return (
     <>
-
-        <div>book</div>
-        
-
+    <Form
+      name="customized_form_controls"
+      layout="inline"
+      onFinish={handleSearchFinish}
+      initialValues={{
+        price: {
+          number: 0,
+          currency: 'rmb',
+        },
+      }}
+    >
+      <Form.Item name="booknName" label="Book Name" >
+        <Input />
+      </Form.Item>
+      <Form.Item name="authorName" label="Author Name" >
+        <Input />
+      </Form.Item>
+      <Form.Item name="category" label="Category" >
+        <Select options={[
+        { value: 'jack', label: 'Jack' },
+        { value: 'lucy', label: 'Lucy' },
+        { value: 'Yiminghe', label: 'yiminghe' },
+        { value: 'disabled', label: 'Disabled', disabled: true },
+      ]}/>
+      </Form.Item>
+      <Form.Item>
+        <Space>
+        <Button type="primary" htmlType="submit">
+          Search
+        </Button>
+        <Button  htmlType="submit">
+          Clear
+        </Button>
+        </Space>
+      </Form.Item>
+    </Form>
+      
     </>
 
   );
