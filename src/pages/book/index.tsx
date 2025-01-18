@@ -4,27 +4,31 @@ import {Layout as AntdLayout, Button, Form, Input, Select, Space} from 'antd'
 const {Content} = AntdLayout
 
 export default function Home() {
-  const handleSearchFinish =()=>{
+  const [form] = Form.useForm()
+  const handleSearchFinish =(values)=>{
+    
+  }
 
-
+  const handleSearchReset = ()=>{
+    form.resetFields()
   }
   return (
     <>
     <Form
-      name="customized_form_controls"
+      name="search"
+      form={form}
       layout="inline"
       onFinish={handleSearchFinish}
       initialValues={{
-        price: {
-          number: 0,
-          currency: 'rmb',
-        },
+        name:'',
+        author:'',
+        category:''
       }}
     >
-      <Form.Item name="booknName" label="Book Name" >
+      <Form.Item name="name" label="Book Name" >
         <Input placeholder='Book Name' allowClear/>
       </Form.Item>
-      <Form.Item name="authorName" label="Author Name" >
+      <Form.Item name="author" label="Author Name" >
         <Input placeholder = 'Author' allowClear/>
       </Form.Item>
       <Form.Item name="category" label="Category" >
@@ -40,7 +44,7 @@ export default function Home() {
         <Button type="primary" htmlType="submit">
           Search
         </Button>
-        <Button  htmlType="submit">
+        <Button  htmlType="submit" onClick={handleSearchReset}>
           Clear
         </Button>
         </Space>
