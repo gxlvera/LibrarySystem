@@ -22,13 +22,13 @@ export default function Home() {
       }}
     >
       <Form.Item name="booknName" label="Book Name" >
-        <Input />
+        <Input placeholder='Book Name' allowClear/>
       </Form.Item>
       <Form.Item name="authorName" label="Author Name" >
-        <Input />
+        <Input placeholder = 'Author' allowClear/>
       </Form.Item>
       <Form.Item name="category" label="Category" >
-        <Select options={[
+        <Select allowClear options={[
         { value: 'jack', label: 'Jack' },
         { value: 'lucy', label: 'Lucy' },
         { value: 'Yiminghe', label: 'yiminghe' },
