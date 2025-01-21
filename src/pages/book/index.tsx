@@ -16,9 +16,93 @@ const dataSource = [
     age: 42,
     address: '10 Downing Street',
   },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
 ];
 
-const columns = [
+const COLUMNS = [
   {
     title: 'Book Name',
     dataIndex: 'name',
@@ -66,6 +150,19 @@ export default function Home() {
   const handleSearchReset = ()=>{
     form.resetFields()
   }
+
+  const columns=[...COLUMNS,
+    {
+      title:'Action',key:"action",render:(_ :any,row:any)=>{
+      return <>
+        <Space>
+        <Button type='link'>Edit</Button>
+        <Button type='link' danger>Delete</Button>
+        </Space>
+      </>
+      }
+    }
+  ]
   return (
     <>
     <Form
