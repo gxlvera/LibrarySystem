@@ -1,5 +1,6 @@
 
 import {Layout as AntdLayout, Button, Col, Form, Input, Row, Select, Space, Table} from 'antd'
+import { useRouter } from 'next/router';
 
 const {Content} = AntdLayout
 
@@ -143,6 +144,7 @@ const COLUMNS = [
 
 export default function Home() {
   const [form] = Form.useForm()
+  const router = useRouter()
   const handleSearchFinish =(values)=>{
     
   }
@@ -151,12 +153,16 @@ export default function Home() {
     form.resetFields()
   }
 
+  const handleBookEdit = ()=>{
+    router.push('/book/edit/id')
+  }
+
   const columns=[...COLUMNS,
     {
       title:'Action',key:"action",render:(_ :any,row:any)=>{
       return <>
         <Space>
-        <Button type='link'>Edit</Button>
+        <Button type='link' onClick={handleBookEdit}>Edit</Button>
         <Button type='link' danger>Delete</Button>
         </Space>
       </>
