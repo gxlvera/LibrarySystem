@@ -20,20 +20,40 @@ const dataSource = [
 
 const columns = [
   {
-    title: 'Name',
+    title: 'Book Name',
     dataIndex: 'name',
     key: 'name',
   },
   {
-    title: 'Age',
+    title: 'Cover',
     dataIndex: 'age',
     key: 'age',
   },
   {
-    title: 'Address',
+    title: 'Author',
     dataIndex: 'address',
     key: 'address',
   },
+  {
+    title: 'Category',
+    dataIndex: 'address',
+    key: 'address',
+  },
+  {
+    title: 'Description',
+    dataIndex: 'address',
+    key: 'address',
+  },
+  {
+    title: 'Inventory',
+    dataIndex: 'address',
+    key: 'address',
+  },
+  {
+    title: 'Created time',
+    dataIndex: 'address',
+    key: 'address',
+  }, 
 ];
 
 
@@ -98,7 +118,7 @@ export default function Home() {
       </Row>
     </Form>
 
-    <Table dataSource={dataSource} columns={columns} />
+    <Table dataSource={dataSource} columns={columns} scroll={{x:1000}}/>
       
     </>
 
