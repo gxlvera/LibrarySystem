@@ -170,7 +170,7 @@ export default function Home() {
   const [pagination, setPagination] = useState({
     current:1,
     pageSize:5,
-    showSizeCharger:true,
+    showSizeChanger:true,
     total:0
   })
 
