@@ -189,7 +189,6 @@ export default function Home() {
   }
 
   const handleTableChange = (pagination: TablePaginationConfig)=>{
-
     console.log(pagination)
     setPagination(pagination)
   }
@@ -264,7 +263,7 @@ export default function Home() {
        columns={columns} 
        scroll={{x:1000}}
        onChange={handleTableChange}
-       pagination={{...pagination,showTotal:()=> {return `Total: ${pagination.total} records`}}}
+       pagination={{...pagination,showTotal:()=> `Total: ${pagination.total} records`}}
        />
     </div>
 
