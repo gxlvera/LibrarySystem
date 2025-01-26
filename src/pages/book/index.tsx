@@ -2,6 +2,7 @@
 import {Layout as AntdLayout, Button, Col, Form, Input, Row, Select, Space, Table, TablePaginationConfig} from 'antd'
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import styles from './index.module.css'
 
 const {Content} = AntdLayout
 
@@ -282,14 +283,14 @@ export default function Home() {
         </Col>
       </Row>
     </Form>
-
-    <Table 
-     dataSource={dataSource} 
-     columns={columns} 
-     scroll={{x:1000}} 
-     onChange={handleTableChange}
-     pagination={{...pagination,showTotal:()=>`total : ${pagination.total} records`}}/>
-
+    <div className={styles.tableWrap}>
+      <Table 
+      dataSource={dataSource} 
+      columns={columns} 
+      scroll={{x:1000}} 
+      onChange={handleTableChange}
+      pagination={{...pagination,showTotal:()=>`total : ${pagination.total} records`}}/>
+      </div>
     </>
 
   );
