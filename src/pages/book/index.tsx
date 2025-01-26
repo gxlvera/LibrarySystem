@@ -85,6 +85,36 @@ const dataSource = [
     address: '10 Downing Street',
   },
   {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
     key: '2',
     name: 'John',
     age: 42,
@@ -120,8 +150,18 @@ const dataSource = [
     age: 32,
     address: '10 Downing Street',
   },
-
-  
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
 ];
 
 const COLUMNS = [
@@ -169,7 +209,7 @@ export default function Home() {
 
   const [pagination, setPagination] = useState({
     current:1,
-    pageSize:5,
+    pageSize:10,
     showSizeChanger:true,
     total:0
   })
@@ -261,8 +301,8 @@ export default function Home() {
       <Table 
        dataSource={dataSource} 
        columns={columns} 
-       scroll={{x:1000}}
-       onChange={handleTableChange}
+       scroll={{x:1000}} 
+       onChange={handleTableChange} 
        pagination={{...pagination,showTotal:()=> `Total: ${pagination.total} records`}}
        />
     </div>
