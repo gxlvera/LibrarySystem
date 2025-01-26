@@ -203,7 +203,6 @@ export default function Home() {
     total:0
   })
 
-  const [total,setTotal] = useState(0)
   const handleSearchFinish =(values)=>{
     
   }
@@ -225,10 +224,10 @@ export default function Home() {
       title:'Action',key:"action",render:(_ :any,row:any)=>{
       return <>
         <Space>
-        <Button type='link'>Edit</Button>
+        <Button type='link' onClick={handleBookEdit}>Edit</Button>
         <Button type='link' danger>Delete</Button>
         </Space>
-      </>
+      </> 
       }
     }
   ]
