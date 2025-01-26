@@ -1,9 +1,59 @@
 
-import {Layout as AntdLayout, Button, Col, Form, Input, Row, Select, Space, Table} from 'antd'
+import {Layout as AntdLayout, Button, Col, Form, Input, Row, Select, Space, Table, TablePaginationConfig} from 'antd'
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const {Content} = AntdLayout
 
 const dataSource = [
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
   {
     key: '1',
     name: 'Mike',
@@ -143,6 +193,16 @@ const COLUMNS = [
 
 export default function Home() {
   const [form] = Form.useForm()
+  const router = useRouter()
+
+  const [pagination, setPagination] = useState({
+    current:1,
+    pageSize:20,
+    showSizeChanger: true,
+    total:0
+  })
+
+  const [total,setTotal] = useState(0)
   const handleSearchFinish =(values)=>{
     
   }
@@ -151,6 +211,14 @@ export default function Home() {
     form.resetFields()
   }
 
+  const handleBookEdit = () => {
+    router.push('/book/edit/id')
+  }
+
+  const handleTableChange= (pagination:TablePaginationConfig) => {
+    console.log(pagination)
+    setPagination(pagination)
+  }
   const columns=[...COLUMNS,
     {
       title:'Action',key:"action",render:(_ :any,row:any)=>{
@@ -215,8 +283,13 @@ export default function Home() {
       </Row>
     </Form>
 
-    <Table dataSource={dataSource} columns={columns} scroll={{x:1000}}/>
-      
+    <Table 
+     dataSource={dataSource} 
+     columns={columns} 
+     scroll={{x:1000}} 
+     onChange={handleTableChange}
+     pagination={{...pagination,showTotal:()=>`total : ${pagination.total} records`}}/>
+
     </>
 
   );
