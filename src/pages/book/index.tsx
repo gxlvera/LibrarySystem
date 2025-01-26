@@ -1,7 +1,8 @@
 
-import {Layout as AntdLayout, Button, Col, Form, Input, Row, Select, Space, Table} from 'antd'
+import {Layout as AntdLayout, Button, Col, Form, Input, Row, Select, Space, Table, TablePaginationConfig} from 'antd'
 import { useRouter } from 'next/router';
-
+import { useState } from 'react';
+import styles from './index.module.css'
 const {Content} = AntdLayout
 
 const dataSource = [
@@ -101,6 +102,26 @@ const dataSource = [
     age: 42,
     address: '10 Downing Street',
   },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '10 Downing Street',
+  },
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+
+  
 ];
 
 const COLUMNS = [
@@ -145,6 +166,16 @@ const COLUMNS = [
 export default function Home() {
   const [form] = Form.useForm()
   const router = useRouter()
+
+  const [pagination, setPagination] = useState({
+    current:1,
+    pageSize:5,
+    showSizeCharger:true,
+    total:0
+  })
+
+
+
   const handleSearchFinish =(values)=>{
     
   }
@@ -155,6 +186,13 @@ export default function Home() {
 
   const handleBookEdit = ()=>{
     router.push('/book/edit/id')
+  }
+
+  const handleTableChange = (pagination: TablePaginationConfig)=>{
+
+    console.log(pagination)
+
+
   }
 
   const columns=[...COLUMNS,
@@ -220,9 +258,18 @@ export default function Home() {
         </Col>
       </Row>
     </Form>
+    <div className = {styles.tableWrap}>
 
-    <Table dataSource={dataSource} columns={columns} scroll={{x:1000}}/>
-      
+      <Table 
+       dataSource={dataSource} 
+       columns={columns} 
+       scroll={{x:1000}}
+       onChange={handleTableChange}
+       pagination={{...pagination,showTotal:()=> {return `Total: ${pagination.total} records`}}}
+       />
+    </div>
+
+    
     </>
 
   );
