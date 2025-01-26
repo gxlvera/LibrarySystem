@@ -191,8 +191,7 @@ export default function Home() {
   const handleTableChange = (pagination: TablePaginationConfig)=>{
 
     console.log(pagination)
-
-
+    setPagination(pagination)
   }
 
   const columns=[...COLUMNS,
