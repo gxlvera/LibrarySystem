@@ -203,6 +203,8 @@ export default function Home() {
     total:0
   })
 
+ 
+
   const handleSearchFinish =(values)=>{
     
   }
@@ -288,8 +290,9 @@ export default function Home() {
       columns={columns} 
       scroll={{x:1000}} 
       onChange={handleTableChange}
-      pagination={{...pagination,showTotal:()=>`total : ${pagination.total} records`}}/>
-      </div>
+      pagination={{...pagination,showTotal:()=>`total : ${pagination.total} records`}}
+      sticky={true}/>
+    </div>
     </>
 
   );
